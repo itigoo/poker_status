@@ -32,10 +32,9 @@
 #include <vector>
 using namespace std;
 
-#include "./input/input.cpp"
+#include "./History.cpp"
 
-
-int main() {
-    Environment env;
-    env.HandHistory=input();
-}
+class Environment{
+    public:
+        vector<History> HandHistory;
+};
