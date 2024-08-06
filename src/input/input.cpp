@@ -37,8 +37,6 @@
 using namespace std;
 namespace fs = std::filesystem;
 
-#include "../Environment/Environment.cpp"
-
 vector<History> input(){
     // 対象ディレクトリのパス
     std::string path = "input/data/";

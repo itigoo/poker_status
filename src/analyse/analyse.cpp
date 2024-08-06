@@ -1,11 +1,3 @@
-#include <algorithm>
-#include <bitset>
-#include <complex>
-#include <deque>
-#include <exception>
-#include <fstream>
-#include <functional>
-#include <iomanip>
 #include <ios>
 #include <iosfwd>
 #include <iostream>
@@ -32,13 +24,10 @@
 #include <vector>
 using namespace std;
 
-#include "./Environment/Environment.cpp"
-#include "./input/input.cpp"
-#include "./analyse/analyse.cpp"
+#include "./RaitoOfFoldToRiverBet.cpp"
 
-
-int main() {
-    Environment env;
-    env.HandHistory=input();
-    analyse("RaitoOfFoldToRiverBet",env);
+void analyse(string analysetype,Environment env){
+    if (analysetype=="RaitoOfFoldToRiverBet"){
+        RaitoOfFoldToRiverBet(env);
+    }
 }

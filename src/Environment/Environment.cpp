@@ -37,4 +37,5 @@ using namespace std;
 class Environment{
     public:
         vector<History> HandHistory;
+        string PlayerName="YourID";
 };
