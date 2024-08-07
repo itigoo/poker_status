@@ -24,10 +24,10 @@
 #include <vector>
 using namespace std;
 
-#include "./RaitoOfFoldToRiverBet.cpp"
+#include "./FrequencyOfFoldToRiverBet.cpp"
 
 void analyse(string analysetype,Environment env){
-    if (analysetype=="RaitoOfFoldToRiverBet"){
-        RaitoOfFoldToRiverBet(env);
+    if (analysetype=="FrequencyOfFoldToRiverBet"){
+        FrequencyOfFoldToRiverBet(env);
     }
 }

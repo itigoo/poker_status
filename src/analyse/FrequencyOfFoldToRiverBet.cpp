@@ -26,11 +26,12 @@ using namespace std;
 
 // Riverでベットした時のfold率を調べます
 
-void RaitoOfFoldToRiverBet(Environment env){
+void FrequencyOfFoldToRiverBet(Environment env){
     int blocksize=10,blockwidht=20;
     vector<int> counter(blocksize,0),foldcounter(blocksize,0);
     for (History history:env.HandHistory){
         int type=-1,is_fold=0;
+        // if (history.PostflopType<=1) continue;
         for (Action act:history.River.Actions){
             if (type!=-1){
                 if (history.Players[act.player].Name==env.PlayerName) break;

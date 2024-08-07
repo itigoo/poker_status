@@ -14,7 +14,7 @@
 3.`src/`元で`main.cpp`をコンパイルして実行
 
 # 機能一覧
-### RaitoOfFoldToRiverBet
+### FrequencyOfFoldToRiverBet
 * Riverの各種サイズのベットに対するfold率を求めます
 
 comming soon...

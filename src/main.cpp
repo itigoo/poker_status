@@ -40,5 +40,5 @@ using namespace std;
 int main() {
     Environment env;
     env.HandHistory=input();
-    analyse("RaitoOfFoldToRiverBet",env);
+    analyse("FrequencyOfFoldToRiverBet",env);
 }
