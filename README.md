@@ -14,8 +14,21 @@
 3.`src/`元で`main.cpp`をコンパイルして実行
 
 # 機能一覧
+
+##機能変更
+
+`src/main.cpp`の`analyse`内の文字列を変えることで使う機能を指定できます
+使える機能は以下の通りです。
+
 ### FrequencyOfFoldToRiverBet
 * Riverの各種サイズのベットに対するfold率を求めます
+
+### GameTreeExplorer
+* checkとbetのみで構成される各ゲームツリーにおけるbetへのfold率を調べます
+
+* ゲームツリーはx:check,B:betを用いてcallを除いた文字列で表されます
+
+    * 例：xBxxB flop : xbc, turn : xx, river : Bc
 
 comming soon...
 

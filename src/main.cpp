@@ -40,5 +40,6 @@ using namespace std;
 int main() {
     Environment env;
     env.HandHistory=input();
-    analyse("FrequencyOfFoldToRiverBet",env);
+    // analyse("FrequencyOfFoldToRiverBet",env);
+    analyse("GameTreeExplorer",env);
 }
