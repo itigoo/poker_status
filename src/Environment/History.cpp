@@ -51,6 +51,12 @@ std::vector<std::vector<std::string>> splitStringTo2DArray(const std::string& s)
             words.push_back(word);
         }
 
+        if (words.size()>=2){
+            if (words[1]=="said,") {
+                continue;
+            }
+        }
+
         // 行内の単語が空でない場合のみ追加
         if (!words.empty()) {
             result.push_back(words);
@@ -109,7 +115,7 @@ Action getaction(vector<string> array,vector<Player> Players){
     int k=0;
     string name;
     Action action;
-    if (array[array.size()-1]=="out" || array[array.size()-1]=="disconnected"){
+    if (array[array.size()-1]=="out" || array[array.size()-1]=="disconnected" || array[array.size()-1]=="connected"){
         action.player=-1;
         return action;
     }
@@ -168,6 +174,7 @@ struct History{
             // PREFLOP
             while(true){
                 if (array[line][0]=="Uncalled") break;
+                if (array[line][array[line].size()-1]=="pot") break;
                 if (array[line][0]=="***") break;
                 Action temp=getaction(array[line],Players);
                 line++;
@@ -203,6 +210,7 @@ struct History{
             for (int i=0;i<6;i++) paied[i]=0;
             while(true){
                 if (array[line][0]=="Uncalled") break;
+                if (array[line][array[line].size()-1]=="pot") break;
                 if (array[line][0]=="***") break;
                 Action temp=getaction(array[line],Players);
                 line++;
@@ -231,6 +239,7 @@ struct History{
             for (int i=0;i<6;i++) paied[i]=0;
             while(true){
                 if (array[line][0]=="Uncalled") break;
+                if (array[line][array[line].size()-1]=="pot") break;
                 if (array[line][0]=="***") break;
                 Action temp=getaction(array[line],Players);
                 line++;
@@ -259,6 +268,7 @@ struct History{
             for (int i=0;i<6;i++) paied[i]=0;
             while(true){
                 if (array[line][0]=="Uncalled") break;
+                if (array[line][array[line].size()-1]=="pot") break;
                 if (array[line][0]=="***") break;
                 Action temp=getaction(array[line],Players);
                 line++;

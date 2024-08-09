@@ -41,8 +41,6 @@ vector<History> input(){
     // 対象ディレクトリのパス
     std::string path = "input/data/";
     vector<History> Historys;
-    
-
     // ディレクトリ内のファイルを順番に処理
     for (const auto& entry : fs::directory_iterator(path)) {
         if (entry.is_regular_file()) {
@@ -59,10 +57,14 @@ vector<History> input(){
             int sum=0;
             while (std::getline(file, line)) {
                 sum++;
-                if (line.size()==1){
+                if (line.size()<=1){
                     if (s.size()==0) continue;
-                    History h(s);
-                    Historys.push_back(h);
+                    try{
+                        History h(s);
+                        Historys.push_back(h);
+                    } catch(...){
+
+                    }
                     s="";
                     continue;
                 }
