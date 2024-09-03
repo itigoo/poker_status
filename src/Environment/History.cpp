@@ -145,6 +145,7 @@ Action getaction(vector<string> array,vector<Player> Players){
 struct History{
     public:
         string RawData;
+        string ActionLine;
         int SB;
         int BB;
         vector<Player> Players;
@@ -180,15 +181,19 @@ struct History{
                 line++;
                 if (temp.player==-1) continue;
                 if (temp.Type=="raises"){
+                    ActionLine.push_back('R');
                     pot+=temp.amount-paied[temp.player];
                     paied[temp.player]=temp.amount;
                     playernum=1;raisetimes++;
                     Player1=temp.player;
                 } else if (temp.Type=="calls"){
+                    ActionLine.push_back('C');
                     pot+=temp.amount;
                     paied[temp.player]+=temp.amount;
                     playernum++;
                     Player2=temp.player;
+                } else if (temp.Type=="folds"){
+                    ActionLine.push_back('F');
                 }
             }
             if (playernum!=2 || array[line][0]!="***"){

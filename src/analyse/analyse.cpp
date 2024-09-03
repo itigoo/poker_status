@@ -26,11 +26,14 @@ using namespace std;
 
 #include "./FrequencyOfFoldToRiverBet.cpp"
 #include "./GameTreeExplorer.cpp"
+#include "./PrefropAnalyser.cpp"
 
 void analyse(string analysetype,Environment env){
     if (analysetype=="FrequencyOfFoldToRiverBet"){
         FrequencyOfFoldToRiverBet(env);
     } else if (analysetype == "GameTreeExplorer") {
         GameTreeExplorer(env);
+    } else if (analysetype == "PrefropAnalyser"){
+        PrefropAnalyser(env);
     }
 }
